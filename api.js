@@ -69,7 +69,7 @@ fetch(
         }
       });
       if (!searchResults) {
-        container.innerHTML += `<p id="search-results">검색한 결과가 없습니다.</p>`;
+        container.innerHTML += `<p id="search-results">관련 검색어가 없습니다.</p>`;
       }
     };
 
