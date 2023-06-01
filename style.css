@@ -1,3 +1,8 @@
+* {
+  font-family: "Dongle", sans-serif;
+  font-family: "Hahmlet", serif;
+}
+
 html {
   height: 100%;
 }
@@ -9,8 +14,12 @@ body {
 }
 
 header {
-  background-color: rgba(39, 39, 42, 0.75);
+  top: 0;
+  width: 100%;
+  background-color: rgba(39, 39, 42, 0.9);
   border-bottom: none;
+  position: fixed;
+  z-index: 1;
 }
 
 .header-form {
@@ -23,35 +32,75 @@ header {
   align-items: center;
 }
 
-/* a {
-  color: #e5e7eb;
-  border-bottom: none;
-} */
+@media (max-width: 900px) {
+  h1 > a {
+    font-size: 15px;
+    /* 세로 정렬을 위해 줄 높이 조정 */
+    line-height: 1;
+  }
+}
+
+/* 무지개 색상과 그림자를 추가하여 네온사인 효과를 냄 */
+h1 > a {
+  font-size: 48px;
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 0px rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2);
+  /* 밑줄 없애주는 속성 */
+  text-decoration: none;
+  font-size: 50px;
+}
 
 input {
   background-color: transparent;
   padding: 15px;
   border-radius: 20px;
-  border: 2px solid #e5e7eb;
+  border: 1.5px solid #6c63ff;
   font-size: 1.3rem;
   margin-left: 70px;
 }
 
 input::placeholder {
-  color: #e5e7eb;
+  color: #525972;
+  font-size: 18px;
   font-weight: 400;
 }
 
 input:hover,
 input:not(:hover) {
-  color: #e5e7eb;
+  color: #a6afc2;
   cursor: pointer;
+}
+
+input[type="text"]:focus {
+  /* 외곽선을 제거하는 역할 */
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
 }
 
 main {
   display: flex;
   /* 컨테이너 내에서 아이템들이 한 줄에 모두 들어갈 수 없는 경우에 줄바꿈된다. */
   flex-wrap: wrap;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  padding-top: 150px;
+  z-index: 0;
 }
 
 .movie {
@@ -61,6 +110,16 @@ main {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+}
+
+/* 호버 효과 - 영화 카드 확대 및 그림자 변경 */
+.movie:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+img:hover {
+  cursor: pointer;
 }
 
 .movie span {
@@ -103,6 +162,7 @@ main {
 }
 
 .overview > p {
+  /* 양쪽 정렬, 행이 균등하게 조정된다. */
   text-align: justify;
 }
 
@@ -110,6 +170,34 @@ main {
   transform: translateY(0);
 }
 
-.link > {
+#search-results {
+  width: 100%;
+  height: 100%;
+  color: #e5e7eb;
+  font-size: 15px;
+  padding: 500px;
+  text-align: center;
+}
+
+.footer-content > p:last-child {
+  height: 100%;
+  padding: 20px 0px;
+  color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  padding-top: 10px;
   border-bottom: none;
+  letter-spacing: 2px;
+}
+
+.link > a {
+  color: #e5e7eb;
+  /* 밑줄 없애주는 속성 */
+  text-decoration: none;
 }
