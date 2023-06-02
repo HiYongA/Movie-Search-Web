@@ -1,6 +1,6 @@
 # 개인과제 프로젝트 "Movie Search Web"
 '빛나는 명작'은 최고 평점 영화 콜렉션을 제공하는 웹페이지입니다.
-
+<br>
 ![Jun-02-2023 14-28-18](https://github.com/HiYongA/MovieSearchWeb/assets/120562771/93530ee5-ba65-4d16-910a-7c93ac61de6d)
 
 ## 필수 요구 사항
